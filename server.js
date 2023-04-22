@@ -14,8 +14,8 @@ if (args.port === undefined){
     let port = 5000;
 }
 */
-app.use(json());
-app.use(urlencoded({extended: true}))
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 app.get('/app/', (req, res) => {
         res.status(200).send('200 OK')
     
@@ -36,12 +36,12 @@ app.get('/app/rps/play/', (req, res) => {
 })
 
 app.get('/app/rpsls/play/', (req, res) =>{
-    res.status(200).send(JSON.stringify(rpsls(req.query.shot.toLowerCase())))
+    res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
 }
 )
 
 app.get('/app/rpsls/play/:shot', (req, res) =>{
-    res.status(200).send(JSON.stringify(rpsls(req.query.shot.toLowerCase())))
+    res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
 }
 )
 
