@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "connecting rps and rpsls to API",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "type": "module",
     "test": "node server.js --port=5555",
     "start": "node server.js"
   },

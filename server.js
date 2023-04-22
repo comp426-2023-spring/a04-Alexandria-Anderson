@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import { rps } from "./lib/rpsls.js"
-import { rpsls } from "./lib/rpsls.js"
-import minimist from 'minimist'
-import express from "express"
-var args = minimist(process.argv.slice(2));
+import {rps} from './lib/rpsls.js';
+import {rpsls} from './lib/rpsls.js';
+import minimist from 'minimist';
+import express, { json, urlencoded } from 'express';
 
+var args = minimist(process.argv.slice(2));
 let port = args.port || 5000;
 //const express = require('express');
 let app = express();
@@ -14,8 +14,8 @@ if (args.port === undefined){
     let port = 5000;
 }
 */
-app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(json());
+app.use(urlencoded({extended: true}))
 app.get('/app/', (req, res) => {
         res.status(200).send('200 OK')
     
