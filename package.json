@@ -1,0 +1,28 @@
+{
+  "name": "a04-alexandria-anderson",
+  "version": "1.0.0",
+  "description": "connecting rps and rpsls to API",
+  "main": "server.js",
+  "scripts": {
+    "type": "module",
+    "test": "node server.js --port=5555",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/comp426-2023-spring/a04-Alexandria-Anderson.git"
+  },
+  "author": "Alexandria Anderson",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a04-Alexandria-Anderson/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a04-Alexandria-Anderson#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.8"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
