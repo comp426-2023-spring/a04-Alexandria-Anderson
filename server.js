@@ -49,11 +49,11 @@ app.post('/app/rpsls/play/', (req, res) =>{
 
 
 app.get('/app/rps/play/:shot/', (req, res) =>{
-    res.status(200).send(JSON.stringify(rps(req.query.shot)))
+    res.status(200).send(JSON.stringify(rps(req.params.shot)))
 }
 )
 app.get('/app/rpsls/play/:shot/', (req, res) =>{
-    res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
+    res.status(200).send(JSON.stringify(rpsls(req.params.shot)))
 }
 )
 
