@@ -3,12 +3,12 @@
 import {rps} from './lib/rpsls.js';
 import {rpsls} from './lib/rpsls.js';
 import minimist from 'minimist';
-import express, { json, urlencoded } from 'express';
+import express from 'express';
 
 var args = minimist(process.argv.slice(2));
 let port = args.port || 5000;
 //const express = require('express');
-let app = express();
+const app = express();
 /*
 if (args.port === undefined){
     let port = 5000;
@@ -34,28 +34,30 @@ app.get('/app/rpsls/', (req, res) =>{
 app.get('/app/rps/play/', (req, res) => {
     res.status(200).send(JSON.stringify(rps(req.query.shot)))
 })
-app.get('/app/rps/play/', (req, res) => {
-    res.status(200).send(JSON.stringify(rps(req.body.shot)))
-})
+
 app.get('/app/rpsls/play/', (req, res) =>{
     res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
 }
 )
-
-app.get('/app/rpsls/play/', (req, res) =>{
+app.post('/app/rps/play/', (req, res) => {
+    res.status(200).send(JSON.stringify(rps(req.body.shot)))
+})
+app.post('/app/rpsls/play/', (req, res) =>{
     res.status(200).send(JSON.stringify(rpsls(req.body.shot)))
 }
 )
 
-app.get('/app/rpsls/play/:shot', (req, res) =>{
+
+app.get('/app/rps/play/:shot/', (req, res) =>{
+    res.status(200).send(JSON.stringify(rps(req.query.shot)))
+}
+)
+app.get('/app/rpsls/play/:shot/', (req, res) =>{
     res.status(200).send(JSON.stringify(rpsls(req.query.shot)))
 }
 )
 
-app.get('/app/rps/play/:shot', (req, res) =>{
-    res.status(200).send(JSON.stringify(rps(req.query.shot)))
-}
-)
+
 app.get('*', (req, res) => {
     res.status(404).send('404 NOT FOUND')
 })
